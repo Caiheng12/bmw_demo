@@ -1,6 +1,4 @@
-
-import 'ServicesItem.dart';
-import 'ServicesModel.dart';
+part of discover_package;
 
 class ServicesFactory {
 

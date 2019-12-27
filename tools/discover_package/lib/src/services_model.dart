@@ -1,3 +1,5 @@
+part of discover_package;
+
 class ServiceModel {
   Services services;
   List<News> news;

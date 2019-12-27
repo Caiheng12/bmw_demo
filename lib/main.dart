@@ -1,10 +1,6 @@
-import 'package:bmw_demo/ServicesFactory.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
-
-import 'ServicesItem.dart';
-import 'ServicesModel.dart';
-import 'ServicesService.dart';
+import 'package:discover_package/discover_package.dart';
 
 void main() => runApp(MyApp());
 
@@ -34,8 +30,8 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    serviceModel = new ServicesService().getServiceModel();
-    serviceList = new ServicesFactory().convertToServiceModel(serviceModel);
+    serviceModel = ServicesService().getServiceModel();
+    serviceList = ServicesFactory().convertToServiceModel(serviceModel);
     pageViewController = new PageController();
   }
 
@@ -98,13 +94,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 String name = serviceList[index - 1].groupName;
                 return Container(
                   decoration: new BoxDecoration(color: Colors.black),
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                    child: Text(
-                      "$name",
-                      style: new TextStyle(
-                          color: Colors.white, backgroundColor: Colors.black),
-                    ),
+                  padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                  child: Text(
+                    "$name",
+                    style: new TextStyle(
+                        color: Colors.white, backgroundColor: Colors.black),
                   ),
                 );
               } else {
@@ -112,7 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 var servicesItem = serviceList[index - 1].servicesItems;
                 return Container(
                   color: Colors.black,
-                  padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),
+                  padding: const EdgeInsets.all(5),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[

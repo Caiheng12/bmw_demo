@@ -1,4 +1,4 @@
-import 'ServicesModel.dart';
+part of discover_package;
 
 class ServicesService {
 
